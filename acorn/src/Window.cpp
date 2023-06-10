@@ -1,10 +1,7 @@
-//
-// Created by Slope on 6/10/23.
-//
-#include "../include/window.h"
-#include "spdlog/spdlog.h"
-#include "../include/Application.h"
-
+#include <spdlog/spdlog.h>
+#include "Window.h"
+#include "Application.h"
+using namespace Acorn;
 Window::Window(const std::string& title, int width, int height){
     m_handle = nullptr;
     m_height = height;

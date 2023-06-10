@@ -13,16 +13,12 @@ find_package(GLEW REQUIRED)
 find_package(glm REQUIRED)
 
 add_executable(GBIde
-        include/gl_context.h
-        src/main.cpp
-        include/window.h
-        src/window.cpp
-        include/Application.h
-        src/Application.cpp
-        include/ShaderSource.h
-        src/ShaderSource.cpp
-        src/Shader.cpp
-        include/Shader.h
-        )
+	acorn/src/main.cpp
+	acorn/src/window.cpp
+	acorn/src/Application.cpp
+	acorn/src/ShaderSource.cpp
+	acorn/src/Shader.cpp
+)
 
+target_include_directories(GBIde PUBLIC acorn/include)
 target_link_libraries(GBIde PRIVATE glfw GLEW::GLEW spdlog::spdlog glm::glm)

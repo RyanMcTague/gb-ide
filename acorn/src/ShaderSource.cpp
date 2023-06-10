@@ -1,9 +1,5 @@
-//
-// Created by Slope on 6/10/23.
-//
-
-#include "../include/ShaderSource.h"
-
+#include "ShaderSource.h"
+using namespace Acorn;
 
 const char* ShaderSource::vertex = R""""(
     #version 330 core

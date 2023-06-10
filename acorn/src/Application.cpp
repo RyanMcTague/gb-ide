@@ -1,11 +1,9 @@
-//
-// Created by Slope on 6/10/23.
-//
+#include <spdlog/spdlog.h>
+#include "Application.h"
+#include "opengl.h"
+#include "ShaderSource.h"
 
-#include "spdlog/spdlog.h"
-#include "../include/Application.h"
-#include "../include/gl_context.h"
-#include "../include/ShaderSource.h"
+using namespace Acorn;
 
 Application* Application::m_instance = nullptr;
 
