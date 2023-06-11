@@ -6,15 +6,18 @@
 namespace Acorn{
     class Shader{
     private:
-        std::map<uint32_t, const char *> sources;
-        bool m_isValid;
+        uint32_t m_program;
+        std::map<uint32_t, const char*> m_sources;
+        bool m_created;
     public:
-        Shader(const char* vertexSource, const char* fragmentSource);
-
-    private:
-        bool compileShader(uint32_t shaderType, const char *sourceCode);
+        Shader();
+        ~Shader();
+        void addShaderSource(uint32_t shaderType, const char* source);
+        bool compile();
+        void use() const;
+        void destroy(); 
+        bool isCreated() const;
     };
-
 }
 
 #endif
