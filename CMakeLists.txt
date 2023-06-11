@@ -4,25 +4,5 @@ set(CMAKE_CXX_STANDARD 17)
 
 project(GBIde)
 
-find_package(spdlog REQUIRED)
-
-find_package(glfw3 REQUIRED)
-
-find_package(GLEW REQUIRED)
-
-find_package(glm REQUIRED)
-
-add_library(GBIde STATIC
-	acorn/src/window.cpp
-	acorn/src/Application.cpp
-	acorn/src/ShaderSource.cpp
-	acorn/src/Shader.cpp
-)
-
-target_include_directories(GBIde PUBLIC acorn/include)
-target_link_libraries(GBIde PRIVATE glfw GLEW::GLEW spdlog::spdlog glm::glm)
-
-
-add_custom_target(GBIde ALL COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/acorn)
-
-file(COPY ./acorn/include DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/acorn)
+add_subdirectory(acorn)
+add_subdirectory(example)

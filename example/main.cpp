@@ -1,4 +1,5 @@
-#include "Application.h"
+#include <acorn/acorn.h>
+
 using namespace Acorn;
 int main(){
     Application* app = Application::getInstance();
